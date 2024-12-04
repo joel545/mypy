@@ -28,7 +28,7 @@ jobs:
           
       - name: 執行Unit0302pytest.py
         run: |
-          python Unit0302pytest.py  #執行 Unit0204Dict.py
+          python Unit0302pytest.py  #執行 執行Unit0302pytest.py
           
 
 
