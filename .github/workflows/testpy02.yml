@@ -26,9 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  #安裝 requirements.txt 中的套件
           
-      - name: 執行Unit0204Dict.py
+      - name: 執行Unit0302pytest.py
         run: |
-          python Unit0204Dict.py  #執行 Unit0204Dict.py
+          python Unit0302pytest.py  #執行 Unit0204Dict.py
           
 
 
