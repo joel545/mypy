@@ -6,6 +6,7 @@ else:
     print("price1大於price2" )
     
 spendtime = int (input("輸入你的靈修時間(分鐘)："))
+
 print ((spendtime) , "分鐘")
 
 print("\n-----------------------")
