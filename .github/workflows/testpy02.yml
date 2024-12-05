@@ -1,6 +1,6 @@
 #測試python 檔案
 
-name: 執行Python測試-3 open Unit0302pytest 
+name: 執行Python測試-2 open Unit0302pytest 
 on: 
   push:
     branches:
