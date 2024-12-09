@@ -1,6 +1,6 @@
 #測試python 檔案
 
-name: 執行Python測試-2 open Unit0302pytest 
+name: 執行Python測試-5
 on: 
   push:
     branches:
@@ -26,9 +26,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  #安裝 requirements.txt 中的套件
           
-      - name: 測試 Unit0302pytest.py
+      - name: 執行Unit0204Dict.py
         run: |
-          pytest Unit0302pytest.py  #執行 執行Unit0302pytest.py
+          python Unit0204Dict.py  #執行 Unit0204Dict.py
           
 
 
