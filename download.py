@@ -49,8 +49,8 @@ for tag in img3_tag:
     file=src[src.rfind("/")+1:]
     print(file)  #取得圖片來源full src
     
-    if not os.path.exists("download_img"):
-        os.mkdir("download_img")
+    if not os.path.exists("download_images"):
+        os.mkdir("download_images")
     img=requests.get(fullsrc) #下載圖片
-    with open("download_img\\"+file,"wb") as file:  #開啟資料夾與圖片命名
+    with open("download_images\\"+file,"wb") as file:  #開啟資料夾與圖片命名
         file.write(img._content) #寫入圖片以二進制位元碼
