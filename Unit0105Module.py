@@ -6,3 +6,4 @@ print(type(sys.path))
 for s in sys.path:
     print(s)
     print("作業系統:",pf.system())
+    
