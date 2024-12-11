@@ -1,0 +1,5 @@
+data = {
+    'Date': ['2024-01-01', '2024-01-01', '2024-01-02', '2024-01-02', '2024-01-03', '2024-01-03'],
+    'Product': ['Product A', 'Product B', 'Product A', 'Product B', 'Product A', 'Product B'],
+    'Sales': [150, 100, 200, 120, 180, 110]
+}
