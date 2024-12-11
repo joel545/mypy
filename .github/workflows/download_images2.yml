@@ -30,10 +30,18 @@ jobs:
 
              
       - name: Configure git
+<<<<<<< HEAD
         run: |
               git config --global user.name 'python_joel'
               git config --global user.email 'joelliu848@gmail.com'
 
+=======
+        run: 
+             git config --global user.name 'python'
+             git config --global user.email 'joelliu848@gmail.com'
+
+      
+>>>>>>> 6285f90d2c086bf3edf36908e71db6d2c172b473
       - name: Configure git to ues GITHUB_PAT
         run: |
           git remote set-url origin https://${{secrets.MY_PAT}}@github.com/joel545/mypy.git
