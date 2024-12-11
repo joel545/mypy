@@ -1,0 +1,45 @@
+name: Python download images v2
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches:
+      - main
+jobs: 
+  DownloadImages:    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository    
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      
+      - name: Install Requests and bs4
+        run: |
+          #pip install -r requirements.txt
+          pip install -r requirements.txt
+
+      - name: Run downloadimages.py
+        run: 
+              python downloadimages.py
+
+      - name: Configure git
+        run: 
+             git config --global user.name "python-joel"
+             git config --global user.email "joelliu848@gmail.com"
+      
+      - name: Configure git to ues GITHUB_PAT
+        run: |
+          git remote set-url origin https://${{secrets.MY_PAT}}@github.com/joel545/mypy.git
+
+      - name: commit downloaded images
+        run: |
+          git add --all
+          git commit '-m' 'Add download images'
+          git push origin main
+
