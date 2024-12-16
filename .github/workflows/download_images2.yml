@@ -8,7 +8,7 @@ on:
     branches:
       - main
 jobs: 
-  DownloadImages:    
+  Downloadimages:    
     runs-on: ubuntu-latest
     permissions:
       contents: write  #允許推送與更改倉庫內容
@@ -27,10 +27,10 @@ jobs:
           #pip install -r requirements.txt
           pip install -r requirements.txt
 
-      - name: Run downloadImages.py
+      - name: Run downloadimages.py
         run: |
           pip install --upgrade pip
-          python downloadImages.py
+          python downloadimages.py
 
       - name: Configure git
         run: |
