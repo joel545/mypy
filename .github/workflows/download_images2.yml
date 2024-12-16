@@ -34,7 +34,7 @@ jobs:
       - name: Configure git
 
         run: 
-             git config --global user.name 'python'
+             git config --global user.name 'joel545'
              git config --global user.email 'joelliu848@gmail.com'
 
       - name: Configure git to use GITHUB_PAT
