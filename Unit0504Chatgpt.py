@@ -34,7 +34,7 @@ def chat_gpt(userInput):
             "content":reply
         })
         return reply
-    except openai.error.AuthenticationError:
+    except openai.OpenAIError. #無 openai.error時改用
         return "ERROR:API KEY 無效或是沒有設定,請查看API KEY..."
     except openai.error.RateLimitError:
         return "ERROR:已經到使用速率上限,請等等,稍後再試..."
