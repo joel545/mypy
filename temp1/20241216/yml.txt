@@ -1,0 +1,56 @@
+name: Python download images V4
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches:
+      - main
+jobs: 
+  DownloadImages:    
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  #允許推送與更改倉庫內容
+    
+    steps:
+      - name: Checkout repository    
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      
+      - name: Install Requests and bs4
+        run: |
+          #pip install -r requirements.txt
+          pip install -r requirements.txt
+
+      - name: Run downloadImages.py
+        run: |
+          pip install --upgrade pip
+          python downloadImages.py
+
+      - name: Configure git
+        run: |
+          git config --global user.name "pythonhsu"
+          git config --global user.email "python.hsu@gmail.com"
+
+      - name: Configure git to use GITHUB_TOKEN
+        run: |        
+          git remote set-url origin https://${{ secrets.MY_PAT }}@github.com/pythonhsu/mypy.git
+          #git remote set-url origin git@github.com:pythonhsu/mypy.git
+
+      - name: Commit downloaded images
+        run: |
+          git add --all
+          git commit -m "Add downloaded images"
+          git push origin main
+
+
+          
+
+       
+
+          
