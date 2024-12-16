@@ -1,4 +1,4 @@
-name: Python download images v2
+name: Python download images V4
 
 on:
   push:
@@ -11,7 +11,8 @@ jobs:
   DownloadImages:    
     runs-on: ubuntu-latest
     permissions:
-      contents: write #允許推送與更改倉庫內容 
+      contents: write  #允許推送與更改倉庫內容
+    
     steps:
       - name: Checkout repository    
         uses: actions/checkout@v4
@@ -26,24 +27,27 @@ jobs:
           #pip install -r requirements.txt
           pip install -r requirements.txt
 
-      - name: Run downloadimages.py
-        run: 
-              python downloadimages.py
-
-             
-      - name: Configure git
-
-        run: 
-             git config --global user.name 'joel545'
-             git config --global user.email 'joelliu848@gmail.com'
-
-      - name: Configure git to use GITHUB_PAT
+      - name: Run downloadImages.py
         run: |
-          git remote set-url origin https://${{secrets.MY_PAT}}@github.com/joel545/mypy.git
+          pip install --upgrade pip
+          python downloadImages.py
 
-      - name: commit downloaded images
+      - name: Configure git
+        run: |
+          git config --global user.name "joel545"
+          git config --global user.email "joelliu848@gmail.com"
+
+      - name: Configure git to use GITHUB_TOKEN
+        run: |        
+          git remote set-url origin https://${{ secrets.MY_PAT }}@github.com/pythonhsu/mypy.git
+          #git remote set-url origin git@github.com:pythonhsu/mypy.git
+
+      - name: Commit downloaded images
         run: |
           git add --all
-          git commit '-m' 'Add download images'
-          git push origin main
+          git commit -m "Add downloaded images"
+          git push origin main 
 
+       
+
+          
